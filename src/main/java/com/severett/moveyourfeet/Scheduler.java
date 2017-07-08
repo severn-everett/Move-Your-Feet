@@ -1,17 +1,21 @@
 package com.severett.moveyourfeet;
 
+import com.severett.moveyourfeet.assignments.BuildingAssigner;
 import com.severett.moveyourfeet.config.ConfigurationException;
-import com.severett.moveyourfeet.config.SchedulerConfig;
+import com.severett.moveyourfeet.config.CLISchedulerConfig;
+import org.json.JSONArray;
 
 public class Scheduler {
 
     public static void main(String[] args) {
-        SchedulerConfig config = new SchedulerConfig();
+        CLISchedulerConfig config = new CLISchedulerConfig();
         try {
             config.parseConfig(args);
-            // TODO Run Scheduler
+            JSONArray schedule = new BuildingAssigner().generateBuildingAssignments(config);
+            System.out.println(schedule.toString());
         } catch (ConfigurationException ce) {
-            // TODO Display help dialog for how to properly run Scheduler
+            System.err.println(ce);
+            System.exit(1);
         }
     }
     

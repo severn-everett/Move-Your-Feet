@@ -8,15 +8,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SchedulerConfigTest {
+public class CLISchedulerConfigTest {
 
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
-    private SchedulerConfig config;
+    private CLISchedulerConfig config;
     
     @Before
     public void setup() {
-        config = new SchedulerConfig();
+        config = new CLISchedulerConfig();
         System.setErr(new PrintStream(errContent));
     }
     
