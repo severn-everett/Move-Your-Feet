@@ -6,6 +6,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Implementation of SchedulderConfig to parse the configuration
+ * passed in via the command-line
+ * @author Severn Everett
+ */
 public class CLISchedulerConfig implements SchedulerConfig {
     
     private List<Integer> roomsList;

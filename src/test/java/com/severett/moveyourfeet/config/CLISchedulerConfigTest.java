@@ -1,28 +1,17 @@
 package com.severett.moveyourfeet.config;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.Arrays;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class CLISchedulerConfigTest {
-
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     private CLISchedulerConfig config;
     
     @Before
     public void setup() {
         config = new CLISchedulerConfig();
-        System.setErr(new PrintStream(errContent));
-    }
-    
-    @After
-    public void cleanup() {
-        System.setErr(null);
     }
     
     @Test

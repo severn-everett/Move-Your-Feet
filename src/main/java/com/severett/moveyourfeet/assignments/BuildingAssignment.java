@@ -2,39 +2,43 @@ package com.severett.moveyourfeet.assignments;
 
 import org.json.JSONObject;
 
+/**
+ * Data structure for each building's crew assignment
+ * @author Severn Everett
+ */
 public class BuildingAssignment {
     
-    private static final String SENIOR = "senior";
-    private static final String JUNIOR = "junior";
+    private static final String SENIOR_KEY = "senior";
+    private static final String JUNIOR_KEY = "junior";
 
-    private int seniorAmount;
-    private int juniorAmount;
+    private int senior;
+    private int junior;
     
-    public BuildingAssignment(int seniorAmount, int juniorAmount) {
-        this.seniorAmount = seniorAmount;
-        this.juniorAmount = juniorAmount;
+    public BuildingAssignment(int senior, int junior) {
+        this.senior = senior;
+        this.junior = junior;
     }
     
-    public int getSeniorAmount() {
-        return seniorAmount;
+    public int getSenior() {
+        return senior;
     }
     
-    public void setSeniorAmount(int seniorAmount) {
-        this.seniorAmount = seniorAmount;
+    public void setSenior(int senior) {
+        this.senior = senior;
     }
     
-    public int getJuniorAmount() {
-        return juniorAmount;
+    public int getJunior() {
+        return junior;
     }
     
-    public void setJuniorAmount(int juniorAmount) {
-        this.juniorAmount = juniorAmount;
+    public void setJunior(int junior) {
+        this.junior = junior;
     }
     
     public JSONObject toJSONObject() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put(SENIOR, seniorAmount);
-        jsonObject.put(JUNIOR, juniorAmount);
+        jsonObject.put(SENIOR_KEY, senior);
+        jsonObject.put(JUNIOR_KEY, junior);
         return jsonObject;
     }
     
