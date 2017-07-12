@@ -2,7 +2,7 @@ package com.severett.moveyourfeet;
 
 import com.severett.moveyourfeet.assignments.BuildingAssigner;
 import com.severett.moveyourfeet.config.ConfigurationException;
-import com.severett.moveyourfeet.config.CLISchedulerConfig;
+import com.severett.moveyourfeet.config.CLISchedulerConfigParser;
 import org.json.JSONArray;
 
 /**
@@ -14,10 +14,8 @@ import org.json.JSONArray;
 public class Scheduler {
 
     public static void main(String[] args) {
-        CLISchedulerConfig config = new CLISchedulerConfig();
         try {
-            config.parseConfig(args);
-            JSONArray schedule = BuildingAssigner.getInstance().generateBuildingAssignments(config);
+            JSONArray schedule = BuildingAssigner.getInstance().generateBuildingAssignments(new CLISchedulerConfigParser(args).parseConfig());
             System.out.println(schedule.toString());
         } catch (ConfigurationException ce) {
             System.err.println(ce);

@@ -1,9 +1,10 @@
 package com.severett.moveyourfeet.assignments;
 
-import com.severett.moveyourfeet.config.SchedulerConfig;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.json.JSONArray;
+import com.severett.moveyourfeet.config.SchedulerConfigParser;
+import com.severett.moveyourfeet.config.SchedulerConfiguration;
 
 /**
  * Singleton class that takes in a SchedulerConfig object and
@@ -24,7 +25,7 @@ public class BuildingAssigner {
     private BuildingAssigner() {
     }
     
-    public JSONArray generateBuildingAssignments(SchedulerConfig config) {
+    public JSONArray generateBuildingAssignments(SchedulerConfiguration config) {
         List<Integer> roomsList = config.getRoomsList();
         final int seniorCapacity = config.getSeniorCapacity();
         final int juniorCapacity = config.getJuniorCapacity();
